@@ -42,7 +42,7 @@ public class GuessNumberGame {
             gameRecord.winTimes++;
         }
         if (gameStatus.equals(GameStatus.FAILED)){
-            gameRecord.rate = 0;
+            gameRecord.rate -=3;
         }
     }
 

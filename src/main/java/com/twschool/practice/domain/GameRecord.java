@@ -16,5 +16,8 @@ public class GameRecord {
         rate+=3;
         return rate;
     }
-
+    public int loseRate() {
+        rate-=3;
+        return rate;
+    }
 }
