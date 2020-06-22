@@ -7,7 +7,7 @@ import org.mockito.Mockito;
 
 public class GameRepositoryTest {
     @Test
-    public void should_return_game_when_guess_game_once(){
+    public void should_return_same_when_guess_game_create_and_find(){
         //given
         GameRepository gameRepository = Mockito.mock(GameRepository.class);
         GuessNumberGame guessNumberGame = gameRepository.create();

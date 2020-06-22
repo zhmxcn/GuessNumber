@@ -27,7 +27,7 @@ public class GuessNumberControllerTest {
                 .content("{\"number\":\"1 2 3 4\"}"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.input").value("1 2 3 4"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value("4A0B"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.result").exists());
 
     }
 }
