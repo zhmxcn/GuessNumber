@@ -3,6 +3,7 @@ package com.twschool.practice.domain;
 public class UserInfo {
     private String userId;
     private GameRecord record = new GameRecord();
+    private GuessNumberGame game;
 
     public UserInfo(String userId) {
         this.userId = userId;
@@ -22,5 +23,13 @@ public class UserInfo {
 
     public void setRecord(GameRecord record) {
         this.record = record;
+    }
+
+    public GuessNumberGame getGame() {
+        return game;
+    }
+
+    public void setGame(GuessNumberGame game) {
+        this.game = game;
     }
 }

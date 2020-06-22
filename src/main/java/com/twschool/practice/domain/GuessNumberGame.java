@@ -28,10 +28,10 @@ public class GuessNumberGame {
     }
 
     private void timesRate() {
-        if (gameRecord.rate%5==0){
+        if (gameRecord.rate%5==0&&gameRecord.rate!=0){
             gameRecord.addFiveRate();
         }
-        if (gameRecord.rate%3==0){
+        if (gameRecord.rate%3==0&&gameRecord.rate!=0){
             gameRecord.addThreeRate();
         }
     }
@@ -42,7 +42,7 @@ public class GuessNumberGame {
             gameRecord.winTimes++;
         }
         if (gameStatus.equals(GameStatus.FAILED)){
-            gameRecord.rate -=3;
+            gameRecord.loseRate();
         }
     }
 
