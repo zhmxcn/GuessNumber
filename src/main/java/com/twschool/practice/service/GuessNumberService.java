@@ -3,23 +3,16 @@ package com.twschool.practice.service;
 import com.twschool.practice.domain.AnswerGenerator;
 import com.twschool.practice.domain.GameStatus;
 import com.twschool.practice.domain.GuessNumberGame;
+import org.springframework.stereotype.Service;
 
 public class GuessNumberService {
 
     private static GuessNumberGame guessNumberGame;
 
-    public GuessNumberService(GuessNumberGame guessNumberGame) {
-        this.guessNumberGame = guessNumberGame;
-    }
 
-    public GuessNumberService() {
-
-    }
-
-    public String guess(String number) {
-        if (!guessNumberGame.getStatus().equals(GameStatus.CONTINUED)){
-            guessNumberGame = new GuessNumberGame(new AnswerGenerator());
+        public String guess(String userAnswer){
+            GuessNumberGame guessNumberGame = new GuessNumberGame(new AnswerGenerator());
+            return guessNumberGame.guess(userAnswer);
         }
-        return guessNumberGame.guess(number);
-    }
+
 }
