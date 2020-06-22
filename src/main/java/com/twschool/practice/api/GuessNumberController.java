@@ -20,6 +20,7 @@ public class GuessNumberController {
         Map<String, String> responseBody = new HashMap<>();
         responseBody.put("input", requestBody.get("number"));
         responseBody.put("result", guessNumberService.guess(requestBody.get("number")));
+        responseBody.put("rate",guessNumberService.getRate());
         return responseBody;
     }
 }

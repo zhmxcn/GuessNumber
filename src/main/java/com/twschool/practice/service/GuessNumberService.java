@@ -7,6 +7,7 @@ import com.twschool.practice.domain.GuessNumberGame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
 @Component
 public class GuessNumberService {
 
@@ -14,9 +15,13 @@ public class GuessNumberService {
     private GameRepository gameRepository;
 
 
-        public String guess(String userAnswer){
-            GuessNumberGame guessNumberGame = gameRepository.find();
-            return guessNumberGame.guess(userAnswer);
-        }
+    public String guess(String userAnswer) {
+        GuessNumberGame guessNumberGame = gameRepository.find();
+        return guessNumberGame.guess(userAnswer);
+    }
 
+    public String getRate() {
+        GuessNumberGame guessNumberGame = gameRepository.find();
+        return String.valueOf(guessNumberGame.getGameRecord().rate);
+    }
 }
